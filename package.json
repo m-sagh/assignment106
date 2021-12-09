@@ -39,6 +39,7 @@
   "author": "Google LLC",
   "license": "BSD-3-Clause",
   "dependencies": {
+    "axios": "^0.24.0",
     "lit": "^2.0.0"
   },
   "devDependencies": {
