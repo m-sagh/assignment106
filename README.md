@@ -1,113 +1,20 @@
-# LitElement JavaScript starter
+![img_1.png](img_1.png)
+პირობა ასეთია:
+1.	მარცხენა მხარეს გაქვთ ორი ველი და ღილაკი, (პირველ ველში სახელი იწერება, მეორე ველში პოსტის შიგთავსი, “Tweet” ღილაკზე ხელის დაჭერით უნდა დაიპოსტოს ცენტრალურ სექციაში იმ სახით რომელსაც ხედავთ.
+2.	ცენტრალურ სექციაში პოსტების ჩამონათვალი ჩანს, რომელსაც აქვს მხოლოდ 1 ქმედება “Delete”.
+3.	მარჯვენა ნაწილში მხოლოდ პოსტების რაოდენობას ითვლის.
 
-This project includes a sample component using LitElement with JavaScript.
+მთლიანად მზადაა 4 ფუნქცია რომელიც არაა კლასის(კომპონენტის ნაწილი) და გამოსაძახებლად „this.“ ოპერატორი არ დაგჭირდებათ
+1.	check() რომელიც ფრომისია და 70/30 წილით აბრუნებს „success“ ან „errors“ (დაჭერის მაგალითი დაკომენტარებულია კონსტრუქტორში). უნდა შეამოწმოთ დაბრუნებული პასუხები მაშინ როცა ამატებთ პოსტს, ან როცა შლით, თუ success დაბრუნდა მხოლოდ ამ შემთხვევაში უნდა დაამატოთ ან წაშალოთ.
+2.	saveToStorage(tweets) ეს ფუნქცია ინახავს თქვენს მიერ დაპოსტილ თვითებს (პარამეტრად გადაეცით მთელი სია).
+3.	loadFromStorage() ეს ფუნქცია აბრუნებს უკვე შენახულ თვითებს, რომელიც შეინახეთ saveToStorage ის გამოყენებით და უნდა გამოიძახოთ ჩატვირთვისთანავე (რადგან შენახული თვითები გამოჩნდეს.
+4.	clearStorage() ეს ფუნქცია ასუფთავებს შენახულ მონაცემებს დაგჭირდებათ მხოლოდ იმ შემთხვევაში თუ დაგჭირდებათ შენახული მონაცემების გასუფთავება, (ეს მხოლოდ დამხმარე ფუნქციაა და არაა დავალების ნაწილი )
 
-## Setup
-
-Install dependencies:
-
-```bash
-npm i
-```
-
-## Testing
-
-This sample modern-web.dev's
-[@web/test-runner](https://www.npmjs.com/package/@web/test-runner) along with
-Mocha, Chai, and some related helpers for testing. See the
-[modern-web.dev testing documentation](https://modern-web.dev/docs/test-runner/overview) for
-more information.
-
-Tests can be run with the `test` script, which will run your tests against Lit's development mode (with more verbose errors) as well as against Lit's production mode:
-
-```bash
-npm test
-```
-
-For local testing during development, the `test:dev:watch` command will run your tests in Lit's development mode (with verbose errors) on every change to your source files:
-
-```bash
-npm test:watch
-```
-
-Alternatively the `test:prod` and `test:prod:watch` commands will run your tests in Lit's production mode.
-
-## Dev Server
-
-This sample uses modern-web.dev's [@web/dev-server](https://www.npmjs.com/package/@web/dev-server) for previewing the project without additional build steps. Web Dev Server handles resolving Node-style "bare" import specifiers, which aren't supported in browsers. It also automatically transpiles JavaScript and adds polyfills to support older browsers. See [modern-web.dev's Web Dev Server documentation](https://modern-web.dev/docs/dev-server/overview/) for more information.
-
-To run the dev server and open the project in a new browser tab:
-
-```bash
-npm run serve
-```
-
-There is a development HTML file located at `/dev/index.html` that you can view at http://localhost:8000/dev/index.html. Note that this command will serve your code using Lit's development mode (with more verbose errors). To serve your code against Lit's production mode, use `npm run serve:prod`.
-
-## Editing
-
-If you use VS Code, we highly reccomend the [lit-plugin extension](https://marketplace.visualstudio.com/items?itemName=runem.lit-plugin), which enables some extremely useful features for lit-html templates:
-
-- Syntax highlighting
-- Type-checking
-- Code completion
-- Hover-over docs
-- Jump to definition
-- Linting
-- Quick Fixes
-
-The project is setup to reccomend lit-plugin to VS Code users if they don't already have it installed.
-
-## Linting
-
-Linting of JavaScript files is provided by [ESLint](eslint.org). In addition, [lit-analyzer](https://www.npmjs.com/package/lit-analyzer) is used to type-check and lint lit-html templates with the same engine and rules as lit-plugin.
-
-The rules are mostly the recommended rules from each project, but some have been turned off to make LitElement usage easier. The recommended rules are pretty strict, so you may want to relax them by editing `.eslintrc.json`.
-
-To lint the project run:
-
-```bash
-npm run lint
-```
-
-## Formatting
-
-[Prettier](https://prettier.io/) is used for code formatting. It has been pre-configured according to the Lit's style. You can change this in `.prettierrc.json`.
-
-Prettier has not been configured to run when commiting files, but this can be added with Husky and and `pretty-quick`. See the [prettier.io](https://prettier.io/) site for instructions.
-
-## Static Site
-
-This project includes a simple website generated with the [eleventy](11ty.dev) static site generator and the templates and pages in `/docs-src`. The site is generated to `/docs` and intended to be checked in so that GitHub pages can serve the site [from `/docs` on the master branch](https://help.github.com/en/github/working-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
-
-To enable the site go to the GitHub settings and change the GitHub Pages &quot;Source&quot; setting to &quot;master branch /docs folder&quot;.</p>
-
-To build the site, run:
-
-```bash
-npm run docs
-```
-
-To serve the site locally, run:
-
-```bash
-npm run docs:serve
-```
-
-To watch the site files, and re-build automatically, run:
-
-```bash
-npm run docs:watch
-```
-
-The site will usually be served at http://localhost:8000.
-
-## Bundling and minification
-
-This starter project doesn't include any build-time optimizations like bundling or minification. We recommend publishing components as unoptimized JavaScript modules, and performing build-time optimizations at the application level. This gives build tools the best chance to deduplicate code, remove dead code, and so on.
-
-For information on building application projects that include LitElement components, see [Build for production](https://lit.dev/docs/tools/production/) on the LitElement site.
-
-## More information
-
-See [Get started](https://lit.dev/docs/getting-started/) on the Lit site for more information.
+უკვე დაწერილია ყველა ფუნქციის გამოძახება. თქვენი დავალებაა, დაამთავროთ ეს 5 ფუნქცია.
+1.	კონსტრუქტორი (constructor)  : აღწეროთ საწყისი მნიშვნელობები, მაგალითად, this.postCount, და this.tweets - პირველი პოსტების რაოდენობის დასათველად გამოიყენება, მეორე სიაა პოსტების, რომელიც ობიექტის ტიპის ცვლადებს ინახავს და მაგალითი უკვე მოყვანილია რომელიც მხოლოდ საჩვენებლადაა და თქვენ უნდა წაშალოთ. აქვე უნდა გამოიყენოთ loadFromStorage ფუნქცია.
+2.	nameInput ფუნქცია გამოიძახება მაშინ როცა ინფუთში ჩანაწერი იცვლება,
+      აქვე არის const value რომელიც inputის მნიშნველობას უდრის
+3.	postInput მუშაობს ზუსტად ისევე როგორც nameInput – const value არის „Post” შიგთავსი
+4.	postTweet ფუნქცია გამოიძახება “Tweet” ღილაკზე დაჭერით, არ მოყვება არანაირი პარამეტრი და ლოგიკა უნდა იყოს შემდეგი:
+      უნდა შევამოწმო check ფუნქციიდან დაბრუნებული პასუხი, თუ „წარმატებით“ დაბრუნდა მაშინ გამოვაჩინო ორი ინფუთის მიხედვით შევსებული მონაცემები ცენტრალურ სექციაში( this.tweets ის არაიში ჩავაგდო ობიექტი, (დანარჩენს თვითონ დახატავს)). და saveToStorage ის გამოყენებით შევინახო „ბაზაში“.
+5.	DeleteTweet გამოიძახება ავტომატურად Delete ის დაჭერის დროს და პარამეტრად მოდის იმ პოსტის ინდექსი არაიში რომელსაც დავაჭირეთ. აქაც ვამოწმებ check ს და ახალ სიას ვინახავ saveToStorage ის გამოყენებით.
