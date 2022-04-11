@@ -103,11 +103,16 @@ export class MyElement extends LitElement {
       name: 'test',
       post: 'test Tweet'
     }]
+    // loadFromStorage()
+    // saveToStorage() //არგუმენტად სჭირდება სია
+
+    //
+
     //საჩვენებლად (უნდა შეარჩიოთ სწორი ფუნქცია, სწორი ადგილი "check"ის გამოსაძახებლად)
     // საჭიროებისთვის გაარჩიე then, catch და promise
     // check()
     //   .then(r=> console.log(r))
-    //   .catch(r=> console.error(r))
+   // //   .catch(r=> console.error(r))
   }
 
   nameInput(event){
