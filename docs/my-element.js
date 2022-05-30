@@ -1,5 +1,12 @@
 import {LitElement, html, css} from 'lit';
-import {check, saveToStorage, loadFromStorage, clearStorage} from './api/rand';
+import {check, saveToStorage, loadFromStorage, clearStorage, deleteFromStorage} from './api/rand';
+
+// saveToStorage promise
+// deleteFromStorage promise
+
+
+//loadFromStorage --
+// clearStorage --
 
 export class MyElement extends LitElement {
   static get styles() {
@@ -102,33 +109,24 @@ export class MyElement extends LitElement {
     this.tweets = [{
       name: 'test',
       post: 'test Tweet'
-    }]
-    // loadFromStorage()
-    // saveToStorage() //არგუმენტად სჭირდება სია
-
-    //
-
-    //საჩვენებლად (უნდა შეარჩიოთ სწორი ფუნქცია, სწორი ადგილი "check"ის გამოსაძახებლად)
-    // საჭიროებისთვის გაარჩიე then, catch და promise
-    // check()
-    //   .then(r=> console.log(r))
-   // //   .catch(r=> console.error(r))
+    },]
   }
 
   nameInput(event){
-    const value = event.target.value
-    console.log(value)
+    const name = event.target.value
+    console.log(name)
   }
   postInput(event){
-    const value = event.target.value
-    console.log(value)
+    const post = event.target.value
+    console.log(post)
   }
 
   postTweet(){
+
   }
 
   DeleteTweet(index){
-    console.log(index)
+
   }
 
 }
